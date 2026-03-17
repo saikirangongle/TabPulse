@@ -7,7 +7,7 @@
 **Intelligent Tab-Level Bandwidth Analytics for Chrome**
 
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue?style=flat-square&logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/)
-[![Version](https://img.shields.io/badge/Version-1.5.0-00f5c4?style=flat-square)](https://github.com/YOUR_USERNAME/tabpulse/releases)
+[![Version](https://img.shields.io/badge/Version-1.5.0-00f5c4?style=flat-square)](https://github.com/saikirangongle/tabpulse/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 [![Chrome](https://img.shields.io/badge/Chrome-110+-green?style=flat-square&logo=googlechrome)](https://www.google.com/chrome/)
 [![CSP Clean](https://img.shields.io/badge/CSP-Clean-success?style=flat-square)](https://developer.chrome.com/docs/extensions/mv3/intro/mv3-overview/)
@@ -152,7 +152,7 @@ TABPULSE/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/tabpulse.git
+git clone https://github.com/saikirangongle/TabPulse.git
 
 # 2. Open Chrome and navigate to
 chrome://extensions
@@ -211,7 +211,7 @@ All code is fully compliant with Chrome's strict Manifest V3 Content Security Po
 
 | Popup | Dashboard |
 |---|---|
-| ![Popup](docs/popup.png) | ![Dashboard](docs/dashboard.png) |
+| ![Popup](popup/image.png) | ![Dashboard](docs/dashboard.png) |
 
 ---
 
