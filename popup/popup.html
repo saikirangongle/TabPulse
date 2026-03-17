@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TabPulse</title>
+<link rel="stylesheet" href="../styles/popup.css">
+</head>
+<body>
+<div class="header">
+  <div class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 16 16" fill="none">
+        <polyline points="1,13 4,8 7,10 10,4 13,6 15,2"
+          stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-text">TabPulse</div>
+      <div class="logo-sub">Bandwidth Monitor</div>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button class="btn-icon" id="btnToggleIndicator" title="Toggle floating indicator">&#9678;</button>
+    <button class="btn-icon" id="btnClearSession"    title="Clear session data">&#8634;</button>
+  </div>
+</div>
+<div id="mainContent">
+  <div class="loading">
+    <div class="loading-dot"></div>
+    <span>Loading&hellip;</span>
+  </div>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>

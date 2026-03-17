@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TabPulse &mdash; Analytics Dashboard</title>
+<link rel="stylesheet" href="../styles/dashboard.css">
+<!-- FIX: No external font CDN. Fonts served via CSS @import in dashboard.css -->
+<script src="minChart.js"></script>
+</head>
+<body>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="app">
+
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 20 20" fill="none">
+            <polyline points="1,16 5,9 9,12 13,5 17,8 19,3"
+              stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="brand-name">TabPulse</span>
+      </div>
+      <span class="brand-tag">Analytics Dashboard</span>
+    </div>
+    <div class="topbar-right">
+      <div class="live-dot">LIVE</div>
+      <button class="btn btn-ghost" id="btnRefresh">&#8634; Refresh</button>
+      <button class="btn btn-ghost" id="btnExportCSV">&#8595; CSV</button>
+      <button class="btn btn-ghost" id="btnExportJSON">&#8595; JSON</button>
+      <button class="btn btn-danger" id="btnClear">&#8856; Clear</button>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-label">Total Data Transferred</div>
+        <div class="kpi-val" id="kpi-bytes">&mdash;</div>
+        <div class="kpi-sub">This session</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Total Requests</div>
+        <div class="kpi-val secondary" id="kpi-reqs">&mdash;</div>
+        <div class="kpi-sub">Across all tabs</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Active Tabs</div>
+        <div class="kpi-val secondary" id="kpi-tabs">&mdash;</div>
+        <div class="kpi-sub" id="kpi-hogs">&mdash;</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Avg Efficiency</div>
+        <div class="kpi-val" id="kpi-eff">&mdash;</div>
+        <div class="kpi-sub">Site bandwidth score</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Session Duration</div>
+        <div class="kpi-val secondary" id="kpi-dur">&mdash;</div>
+        <div class="kpi-sub" id="kpi-peak">Peak: &mdash;</div>
+      </div>
+    </div>
+
+    <div class="charts-grid">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">BANDWIDTH TIMELINE</span>
+          <span class="card-badge" id="badge-tl">&mdash;</span>
+        </div>
+        <div class="chart-wrap"><canvas id="timelineChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">RESOURCE TYPES</span>
+          <span class="card-badge info">Breakdown</span>
+        </div>
+        <div class="chart-wrap chart-wrap-sm"><canvas id="typeChart"></canvas></div>
+        <div class="type-pills" id="typePills"></div>
+      </div>
+    </div>
+
+    <div class="charts-grid">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">TAB BREAKDOWN</span>
+          <span class="card-badge" id="badge-tabs">&mdash;</span>
+        </div>
+        <table class="tab-table">
+          <thead>
+            <tr>
+              <th>#</th><th>Site</th><th>Downloaded</th><th>Uploaded</th>
+              <th>Requests</th><th>Efficiency</th>
+              <th>Status</th><th class="col-right">Predicted (+5m)</th>
+            </tr>
+          </thead>
+          <tbody id="tabTableBody"></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">TOP DOMAINS</span>
+          <span class="card-badge" id="badge-domains">&mdash;</span>
+        </div>
+        <div class="domain-list" id="domainList"></div>
+      </div>
+    </div>
+
+    <div class="charts-grid">
+      <div class="card">
+        <div class="card-header"><span class="card-title">DATA PER TAB</span></div>
+        <div class="chart-wrap"><canvas id="tabBarChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">ANOMALY LOG</span>
+          <span class="card-badge warn" id="badge-anomalies">0</span>
+        </div>
+        <div class="anomaly-list" id="anomalyList"></div>
+      </div>
+    </div>
+
+    <div class="charts-grid-3">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">PREDICTED USAGE</span>
+          <span class="card-badge info">+5 minutes</span>
+        </div>
+        <div class="predict-list" id="predictList"></div>
+      </div>
+      <div class="card" class="span-2">
+        <div class="card-header"><span class="card-title">SETTINGS &amp; CONTROLS</span></div>
+        <div id="settingsPanel"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script src="dashboard.js"></script>
+</body>
+</html>
