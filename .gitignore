@@ -1,0 +1,18 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Package artifacts (none needed, but good practice)
+node_modules/
+*.zip
+*.crx
+*.pem
+
+# Temp
+*.log
