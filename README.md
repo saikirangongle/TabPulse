@@ -14,7 +14,7 @@
 
 A Chrome Extension that monitors real-time bandwidth usage per tab — with live speed tracking, anomaly detection, predictive analytics, an efficiency scoring engine, and a full visual dashboard. Built to be Chrome Web Store ready: fully Manifest V3 compliant with zero CSP violations.
 
-[Features](#-features) · [Architecture](#-architecture) · [Installation](#-installation) · [Project Structure](#-project-structure) · [Technical Highlights](#-technical-highlights) · [Screenshots](#-screenshots)
+[Features](#-features) · [Architecture](#-architecture) · [Installation](#%EF%B8%8F-installation) · [Project Structure](#-project-structure) · [Technical Highlights](#-technical-highlights) · [Screenshots](#-screenshots)
 
 </div>
 
@@ -211,7 +211,7 @@ All code is fully compliant with Chrome's strict Manifest V3 Content Security Po
 
 | Popup | Dashboard |
 |---|---|
-| ![Popup](popup/image.png) | ![Dashboard](docs/dashboard.png) |
+| ![Popup](popup/image.png) | ![Dashboard](dashboard/dashboard.png) |
 
 ---
 
